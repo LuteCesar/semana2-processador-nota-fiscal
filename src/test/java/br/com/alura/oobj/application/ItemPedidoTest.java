@@ -1,4 +1,4 @@
-package br.com.alura.oobj;
+package br.com.alura.oobj.application;
 
 import br.com.alura.oobj.application.ItemPedido;
 import org.junit.jupiter.api.Test;
