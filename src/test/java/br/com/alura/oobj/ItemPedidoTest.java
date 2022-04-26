@@ -14,16 +14,12 @@ class ItemPedidoTest {
 
   @Test
   void getSubtotalCalculandoComUmaUnidade(){
-    ItemPedido.setQuantidade(1);
-
-    assertEquals(ItemPedido.getSubtotal(), new BigDecimal(10));
+    ItemPedido.setQuantidade(1);  assertEquals(ItemPedido.getSubtotal(), new BigDecimal(10));
   }
 
   @Test
   void getSubtotalCalculandoComMaisDeUmaUnidade(){
-  ItemPedido.setQuantidade(5);
-
-  assertEquals(ItemPedido.getSubtotal(), new BigDecimal(50));
+  ItemPedido.setQuantidade(5);    assertEquals(ItemPedido.getSubtotal(), new BigDecimal(50));
   }
 
 }
