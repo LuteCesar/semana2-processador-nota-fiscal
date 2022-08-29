@@ -20,11 +20,12 @@ class PedidoTest {
         assertEquals(pedidoUm.getTotal(), BigDecimal.valueOf(20));
         }
 
+     @Test
      void TestarTotalComMultiplosItnes(){
          ItemPedido Item2 = new ItemPedido();
          Item2.setValorUnitario(BigDecimal.valueOf(30));
          Item1.setQuantidade(2);
-         Item1.setQuantidade(3);
+         Item2.setQuantidade(3);
          pedidoUm.getItens().add(Item2);
          assertEquals(pedidoUm.getTotal(), BigDecimal.valueOf(130));
 
