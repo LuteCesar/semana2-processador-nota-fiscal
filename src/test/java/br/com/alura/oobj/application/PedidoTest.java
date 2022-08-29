@@ -1,23 +1,32 @@
 package br.com.alura.oobj.application;
-
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.List;
 
-public class PedidoTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    private List<ItemPedido> itens = new ArrayList<>(){
-       ItemPedido ItemPedido =  new ItemPedido {
 
-        }
+class PedidoTest {
+
+    ItemPedido Item1 = new ItemPedido();
+    public Pedido pedidoUm = new Pedido();{
+       Item1.setValorUnitario(BigDecimal.valueOf(20));
+       pedidoUm.setItens((List) Item1);
     }
-
-    Pedido Pedido = new Pedido(){
-
-     };
 
     @Test
-    void testeGetTotalComApenasUmItem(){
+    void TestarTotalPedidoComApenasUmItem() {
+        Item1.setQuantidade(1);
+        assertEquals(pedidoUm.getTotal(), BigDecimal.valueOf(20));
+        }
 
-    }
+     void TestarTotalComMultiplosItnes(){
+         ItemPedido Item2 = new ItemPedido();
+         Item2.setValorUnitario(BigDecimal.valueOf(30));
+         Item1.setQuantidade(2);
+         Item1.setQuantidade(3);
+         pedidoUm.getItens().add(Item2);
+         assertEquals(pedidoUm.getTotal(), BigDecimal.valueOf(130));
+
+     }
 }

@@ -1,7 +1,7 @@
 package br.com.alura.oobj.application;
 
-import br.com.alura.oobj.application.ItemPedido;
 import org.junit.jupiter.api.Test;
+
 import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
