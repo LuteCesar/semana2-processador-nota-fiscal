@@ -1,7 +1,8 @@
 package br.com.alura.oobj.application;
+
 import org.junit.jupiter.api.Test;
+
 import java.math.BigDecimal;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class PedidoTest {
 
     ItemPedido Item1 = new ItemPedido();
-    public Pedido pedidoUm = new Pedido();{
-       Item1.setValorUnitario(BigDecimal.valueOf(20));
-       pedidoUm.setItens((List) Item1);
+    Pedido pedidoUm = new Pedido();{
+    Item1.setValorUnitario(BigDecimal.valueOf(20));
+    pedidoUm.getItens().add(Item1);
     }
 
     @Test
@@ -21,7 +22,7 @@ class PedidoTest {
         }
 
      @Test
-     void TestarTotalComMultiplosItnes(){
+     void TestarTotalComMultiplosItens(){
          ItemPedido Item2 = new ItemPedido();
          Item2.setValorUnitario(BigDecimal.valueOf(30));
          Item1.setQuantidade(2);
